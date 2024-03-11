@@ -1,0 +1,380 @@
+/*ヘッダー*/
+/*ハンバーガーメニュー*/
+
+header{
+  background-image: url("/assets/img/R_1.jpeg"); /* 背景画像のパスを指定 */
+  background-size: auto; /* 画像をヘッダー全体に広げる */
+  height: auto;  /*ヘッダーの高さを設定 */
+  color: black; /* テキストの色を設定 */
+  text-align: center; /* テキストを中央揃えにする */
+  padding: 20px; /* ヘッダーの内側の余白を設定 */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+  
+
+    .hamburger-menu {
+      width: 50px;
+      height: 50px;
+      position: absolute;/* 絶対位置指定 */
+      right: 20px; /* 右端からの位置 */
+      border: none;
+      background: transparent;
+      appearance: none;
+      padding: 0;
+      cursor: pointer;
+    }
+    .hamburger-menu__bar {
+      display: inline-block;
+      width: 44%;
+      height: 2px;
+      background: black;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: .5s;
+    }
+    .hamburger-menu__bar:first-child {
+      top: 16px;
+    }
+    .hamburger-menu__bar:nth-child(2) {
+      top: 24px;
+    }
+    .hamburger-menu__bar:last-child {
+      top: 32px;
+    }
+    .hamburger-menu--open .hamburger-menu__bar {
+      top: 50%;
+    }
+    .hamburger-menu--open .hamburger-menu__bar:first-child {
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }
+    .hamburger-menu--open .hamburger-menu__bar:last-child {
+      transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    }
+    .hamburger-menu--open .hamburger-menu__bar:nth-child(2) {
+      display: none;
+    }
+    .navigation {
+      display: none;
+      background: lightgrey;
+      position: absolute;
+      top: 115px;
+      width: 30%;
+      right:0;  /* 右端に配置 */
+      z-index: 9999;
+    }
+    .navigation__list {
+      text-align: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .navigation__list-item {
+      border-bottom: solid 1px #474747;
+    }
+    .navigation__list-item:first-child {
+      border-top: solid 1px #474747;
+    }
+    .navigation__link {
+      color: black;
+      font-weight: 700;
+      text-decoration: none;
+      display: block;
+      padding: 24px 0;
+      transition: .5s;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .navigation__link:hover {
+        background: lightgoldenrodyellow;
+      }
+    }
+
+  .sddress-text1{
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-size: 20px;
+  }
+
+  
+
+  
+  /* スマートフォン画面に適応するメディアクエリ */
+  @media only screen and (max-width: 768px) {
+    /* ここにスマートフォン画面に適応させるCSSを記述します */
+    header {
+      font-size: 10px; /* ヘッダーのフォントサイズを調整 */
+      padding: 10px; /* ヘッダーのパディングを調整 */
+    }
+  
+    .hamburger-menu {
+      width: 30px; /* ハンバーガーメニューアイコンのサイズを調整 */
+      height: 30px;
+      right: 5px; /* ハンバーガーメニューアイコンの位置を調整 */
+    }
+  
+    .navigation {
+      top: 50px; /* ナビゲーションメニューの位置を調整 */
+      width: 100%; /* ナビゲーションメニューの幅を調整 */
+      right: 0;
+    }
+  
+    .navigation__link {
+      padding: 10px 0; /* ナビゲーションリンクのパディングを調整 */
+    }
+  
+    p.address-text1 {
+      font-size: 5px; /* アドレステキストのフォントサイズを調整 */
+    }
+  }
+  
+  /* ヘッダー内の要素のスタイル */
+
+  .language {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; /* 必要に応じてマージンを調整 */
+    color: black;
+    font-size: 20px;
+    text-decoration: none; /* リンクの下線をなくす */
+    outline: none; /* フォーカス時の外枠をなくす */
+  }
+  
+  .language:hover {
+    text-decoration: underline; /* マウスオーバー時に下線を表示 */
+  }
+  
+  .header-all {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .header-left {
+      margin-right: auto; /* ロゴを左側に寄せる */
+  }
+  
+  #logo {
+      width: 90px; /* ロゴのサイズを設定 */
+      height: auto; /* ロゴのアスペクト比を維持 */
+      border-radius: 50%; /* 角を50%で丸くする */
+      overflow: hidden; /* 画像が丸い枠内に収まるようにする */
+  }
+  
+  
+  header div {
+      font-size: 35px; /* フォントサイズ */
+      color: #333; /* テキストカラー */
+      font-weight: bold; /* フォントの太さ */
+      margin-top: 10px; /* 上部マージン */
+      display: flex; /*Flexboxを使用して横に配置*/
+      justify-content: center; /*アイテムを水平方向に中央配置*/
+      text-align: center; /* テキストを水平方向に中央揃え */
+      margin-left: 80px;
+  }
+  
+  .header-right {
+      margin-left: auto; /* SNSリンクを右側に寄せる */
+      margin-right: 100px; /* SNSリンクを左側に移動 */
+  }
+  
+  .sns {
+      list-style-type: none; /* リストのマーカーを非表示にする */
+      padding: 0;
+      margin: 0;
+  }
+  
+  .sns li {
+      display: inline-block;
+      margin-left: 10px; /* 各SNSリンクの間隔を設定 */
+  }
+  
+  .sns li a {
+      color: black;
+      font-size: 20px;
+      text-decoration: none; /* リンクの下線をなくす */
+      outline: none; /* フォーカス時の外枠をなくす */
+  }
+  
+  .sns a:hover {
+    text-decoration: underline; /* マウスオーバー時に下線を表示 */
+  }
+  
+    
+  @media only screen and (max-width: 768px) {
+  
+    header {
+      position: relative; /* 相対的な位置指定 */
+    }
+  
+    .header-left {
+      position: absolute; /* 相対的な位置指定 */
+      top: 0; /* 上端に配置 */
+      left: 0; /* 左端に配置 */
+      margin-right: 10px; /* ロゴを左側に寄せるマージンを調整 */
+    }
+  
+    #logo {
+      width: 50px; /* ロゴのサイズを調整 */
+    }
+  
+    header div {
+      font-size: 20px; /* ヘッダーテキストのフォントサイズを調整 */
+      margin: 15px; /* ヘッダーテキストの左マージンを調整 */
+    }
+
+    .header-all {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 縦方向に中央揃え */
+      justify-content: center; /* 横方向に中央揃え */
+      text-align: center;
+    }
+  
+    .header-right {
+      margin-top: 10px; /* 余白を追加 */
+      text-align: center; /* 中央揃え */
+    }
+  
+    .sns {
+      display: flex;
+      flex-direction: row; /* 横方向に並べる */
+      justify-content: center;
+      align-items: center; /* SNSリンクを中央揃え */
+      list-style-type: none;
+      padding: 0;
+    }
+  
+    .sns li {
+      margin: 0 5px; /* SNSリンクの間の余白 */
+      margin-left: 30px; /* 左側の余白を調整 */
+      font-size: 14px; /* SNSリンクのフォントサイズを小さくする */
+    }
+  
+  }
+  
+
+/*box1*/
+
+.box1 {
+  margin-top: 50px; /* 上部の余白 */
+  margin-bottom: 50px; /* 下部の余白 */
+}
+
+.box1 .sumiko1{
+  float: left; /* 左寄せ */
+  margin-top: 20px;
+  margin-left: 40px; /* 左側に隙間を空ける */
+  width: 150px; /* 画像の幅を調整 */
+}
+
+.box1 .explain {
+  float: right; /* 右寄せ */
+  width: calc(100% - 240px); /* 画像と隙間の分を除いた残りの幅を指定 */
+}
+
+.box1 .explain1 {
+  display: inline-block; /* インラインブロック要素として配置 */
+  margin-right: 10px; /* 画像間の隙間 */
+  margin-bottom: 10px; /* 画像の下部に隙間を空ける */
+  width: 350px;
+  height: 250px;
+  object-fit: cover; /* 画像をボックスにフィットさせる */
+  vertical-align: top; /* 上部に配置 */
+}
+
+
+.box1 .explain1 img {
+  max-width: 100%; /* ボックス内の幅に収まるようにする */
+  max-height: 100%; /* ボックス内の高さに収まるようにする */
+}
+
+.box1 .sumiko1{
+  float: left; /* 左寄せ */
+  margin-top: 50px;
+  margin-right: 40px; /* 右側に隙間を空ける */
+  width: 150px; /* 画像の幅を調整 */
+}
+
+@media (max-width: 768px) {
+  .box1 .explain {
+    float: none; /* 右寄せ解除 */
+    margin: 0 auto; /* 水平方向に中央寄せ */
+    width: 80%; /* 幅の調整（適宜調整してください） */
+  }
+}
+
+/*box2*/
+
+.box2 {
+  margin-top: 50px; /* 上部の余白 */
+  margin-bottom: 50px; /* 下部の余白 */
+}
+
+.box2 .sumiko img{
+  float: right; /* 右寄せ */
+  margin-top: 50px;
+  margin-right: 40px; /* 右側に隙間を空ける */
+  width: 150px; /* 画像の幅を調整 */
+}
+
+.box2 .explain {
+  float: left; /* 左寄せ */
+  margin-left: 40px;
+  width: calc(100% - 240px); /* 画像と隙間の分を除いた残りの幅を指定 */
+}
+
+.box2 .explain1 {
+  display: inline-block; /* インラインブロック要素として配置 */
+  margin-right: 10px; /* 画像間の隙間 */
+  margin-bottom: 10px; /* 画像の下部に隙間を空ける */
+  width: 350px;
+  height: 250px; 
+}
+
+@media (max-width: 768px) {
+  .box2 .explain {
+    float: none; /* 右寄せ解除 */
+    margin: 0 auto; /* 水平方向に中央寄せ */
+    width: 80%; /* 幅の調整（適宜調整してください） */
+  }
+}
+
+
+footer {
+  text-align: center;
+  padding: 10px 0; /* 適切なパディングを指定 */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2; /* フッターの背景色を指定 */
+  z-index: 1000; /* フッターを他の要素よりも前面に表示 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,895 @@
+/*ヘッダー*/
+/*ハンバーガーメニュー*/
+
+
+
+.language a{
+  color: black;
+  font-size: 50px;
+  text-decoration: none; /* リンクの下線をなくす */
+  outline: none; /* フォーカス時の外枠をなくす */
+}
+
+.language a:hover {
+  text-decoration: underline; /* マウスオーバー時に下線を表示 */
+}
+
+
+header{
+    background-image: url("/assets/img/R_1.jpeg"); /* 背景画像のパスを指定 */
+    background-size: auto; /* 画像をヘッダー全体に広げる */
+    height: auto;  /*ヘッダーの高さを設定 */
+    color: black; /* テキストの色を設定 */
+    text-align: center; /* テキストを中央揃えにする */
+    padding: 20px; /* ヘッダーの内側の余白を設定 */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+  .hamburger-menu {
+    width: 50px;
+    height: 50px;
+    position: absolute;/* 絶対位置指定 */
+    right: 20px; /* 右端からの位置 */
+    border: none;
+    background: transparent;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .hamburger-menu__bar {
+    display: inline-block;
+    width: 44%;
+    height: 2px;
+    background: black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s;
+  }
+  .hamburger-menu__bar:first-child {
+    top: 16px;
+  }
+  .hamburger-menu__bar:nth-child(2) {
+    top: 24px;
+  }
+  .hamburger-menu__bar:last-child {
+    top: 32px;
+  }
+  .hamburger-menu--open .hamburger-menu__bar {
+    top: 50%;
+  }
+  .hamburger-menu--open .hamburger-menu__bar:first-child {
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+  .hamburger-menu--open .hamburger-menu__bar:last-child {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+  .hamburger-menu--open .hamburger-menu__bar:nth-child(2) {
+    display: none;
+  }
+  .navigation {
+    display: none;
+    background: lightgrey;
+    position: absolute;
+    top: 115px;
+    width: 30%;
+    right:0;  /* 右端に配置 */
+    z-index: 9999;
+  }
+  .navigation__list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .navigation__list-item {
+    border-bottom: solid 1px #474747;
+  }
+  .navigation__list-item:first-child {
+    border-top: solid 1px #474747;
+  }
+  .navigation__link {
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+    padding: 24px 0;
+    transition: .5s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .navigation__link:hover {
+      background: lightgoldenrodyellow;
+    }
+  }
+
+  
+
+  .sddress-text1{
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-size: 20px;
+  }
+
+/* スマートフォン画面に適応するメディアクエリ */
+@media only screen and (max-width: 768px) {
+  /* ここにスマートフォン画面に適応させるCSSを記述します */
+  header {
+    font-size: 10px; /* ヘッダーのフォントサイズを調整 */
+    padding: 10px; /* ヘッダーのパディングを調整 */
+  }
+
+  .hamburger-menu {
+    width: 30px; /* ハンバーガーメニューアイコンのサイズを調整 */
+    height: 30px;
+    right: 5px; /* ハンバーガーメニューアイコンの位置を調整 */
+  }
+
+  .navigation {
+    top: 50px; /* ナビゲーションメニューの位置を調整 */
+    width: 100%; /* ナビゲーションメニューの幅を調整 */
+    right: 0;
+  }
+
+  .navigation__link {
+    padding: 10px 0; /* ナビゲーションリンクのパディングを調整 */
+  }
+
+  p.address-text1 {
+    font-size: 5px; /* アドレステキストのフォントサイズを調整 */
+  }
+}
+
+/* ヘッダー内の要素のスタイル */
+
+
+.header-all {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-left {
+    margin-right: auto; /* ロゴを左側に寄せる */
+}
+
+#logo {
+    width: 90px; /* ロゴのサイズを設定 */
+    height: auto; /* ロゴのアスペクト比を維持 */
+    border-radius: 50%; /* 角を50%で丸くする */
+    overflow: hidden; /* 画像が丸い枠内に収まるようにする */
+}
+
+
+header div {
+    font-size: 35px; /* フォントサイズ */
+    color: #333; /* テキストカラー */
+    font-weight: bold; /* フォントの太さ */
+    margin-top: 10px; /* 上部マージン */
+    display: flex; /*Flexboxを使用して横に配置*/
+    justify-content: center; /*アイテムを水平方向に中央配置*/
+    text-align: center; /* テキストを水平方向に中央揃え */
+    margin-left: 80px;
+}
+
+.header-right {
+    margin-left: auto; /* SNSリンクを右側に寄せる */
+    margin-right: 100px; /* SNSリンクを左側に移動 */
+}
+
+.sns {
+    list-style-type: none; /* リストのマーカーを非表示にする */
+    padding: 0;
+    margin: 0;
+}
+
+.sns li {
+    display: inline-block;
+    margin-left: 10px; /* 各SNSリンクの間隔を設定 */
+}
+
+.sns li a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none; /* リンクの下線をなくす */
+    outline: none; /* フォーカス時の外枠をなくす */
+}
+
+.sns a:hover {
+  text-decoration: underline; /* マウスオーバー時に下線を表示 */
+}
+
+
+
+
+
+.menu-list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /*Flexboxを使用して横に配置*/
+    justify-content: center; /*アイテムを水平方向に中央配置*/
+}
+
+.menu-list1{
+    margin-right: 30px; /*アイテムの間隔を設定*/
+}
+
+.menu-list > li > a {
+    text-decoration: none; /* リンクの下線を非表示にする */
+    color: inherit; /* リンクの色を親要素の色と同じにする */
+    border-bottom: none; /* 下のボーダー線を非表示にする */
+}
+
+.menu-list a:hover {
+  text-decoration: underline; /* マウスオーバー時に下線を表示 */
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  header {
+    position: relative; /* 相対的な位置指定 */
+  }
+
+  .header-left {
+    position: absolute; /* 相対的な位置指定 */
+    top: 0; /* 上端に配置 */
+    left: 0; /* 左端に配置 */
+    margin-right: 10px; /* ロゴを左側に寄せるマージンを調整 */
+  }
+
+  #logo {
+    width: 50px; /* ロゴのサイズを調整 */
+  }
+
+  header div {
+    font-size: 20px; /* ヘッダーテキストのフォントサイズを調整 */
+    margin: 15px; /* ヘッダーテキストの左マージンを調整 */
+  }
+
+  .menu-list1 {
+    margin-right: 20px; /* メニューリストのアイテム間のマージンを調整 */
+  }
+
+  .header-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 縦方向に中央揃え */
+    justify-content: center; /* 横方向に中央揃え */
+    text-align: center;
+  }
+
+  .header-right {
+    margin-top: 10px; /* 余白を追加 */
+    text-align: center; /* 中央揃え */
+  }
+
+  .sns {
+    display: flex;
+    flex-direction: row; /* 横方向に並べる */
+    justify-content: center;
+    align-items: center; /* SNSリンクを中央揃え */
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .sns li {
+    margin: 0 5px; /* SNSリンクの間の余白 */
+    margin-left: 30px; /* 左側の余白を調整 */
+    font-size: 14px; /* SNSリンクのフォントサイズを小さくする */
+  }
+
+}
+
+
+/*メイン*/
+
+
+
+/* ===== れんこんを表示するコンテナのスタイル ===== */
+
+
+.leaves-container {
+    position: relative;
+    height: 100%; /* コンテナの高さ */
+    width: 100%; /* コンテナの横幅 */
+    overflow: hidden; /* コンテナからはみ出した要素を隠す */
+  }
+  
+  /* ===== れんこんのスタイル ===== */
+  
+  /* れんこんの共通スタイル */
+  .leaf {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    animation: animate-leaf 8s linear;
+    clip-path: circle(50% at center); /* 画像を円形にクリップ */
+  }
+  
+  /* れんこん1 */
+  .leaf-1 {
+    background-image: url('/assets/img/renkon.jpg'); /* 任意のパスを記入 */
+  }
+  
+  /* れんこん2 */
+  .leaf-2 {
+    background-image: url('/assets/img/R_icon.jpg'); /* 任意のパスを記入 */
+  }
+  
+  /* れんこん3 */
+  .leaf-3 {
+    background-image: url('/assets/img/renkon.jpg'); /* 任意のパスを記入 */
+  }
+  
+
+
+  /* ===== れんこんが降るアニメーション ===== */
+  @keyframes animate-leaf {
+    0% {
+      opacity: 0;
+      top: 0;
+      transform: rotate(0);
+    }
+  
+    10% {
+      opacity: 1;
+    }
+  
+    90% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      top: 100vh;
+      transform: rotate(1080deg);
+    }
+  }
+
+
+/*スライダー*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin: 5% auto;  /* 左右のマージンを自動で設定し、中央寄せにする */
+    padding: 0 5%; /* 左右に5%ずつの余白を追加 */
+}
+
+.slider img {
+  width: 100%; 
+  height: 40vw; 
+  border-radius: 30px; /* 角を丸くするための値を指定 */
+}
+
+.slider .slick-slide {
+	transform: scale(0.8);/*左右の画像のサイズを80%に*/
+	transition: all .8s;/*拡大や透過のアニメーションを0.5秒で行う*/
+	opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+	transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+	opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);/*矢印の位置*/
+}
+   
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);/*矢印の位置*/
+}
+
+
+
+
+/*introduct*/
+
+.introduce {
+    font-family: "Times New Roman", Times, serif; /* タイトルのフォントをTimes New Romanに変更 */
+    font-size: 20px; /* タイトルのフォントサイズを変更 */
+    margin-bottom: 20px; /* タイトルの下の余白を追加 */
+    text-align: center; /* テキストを中央揃えにする */
+}
+
+.introduce h1 {
+    font-family: "Times New Roman", Times, serif; /* タイトルのフォントをTimes New Romanに変更 */
+    font-size: 40px; /* タイトルのフォントサイズを変更 */
+    margin-bottom: 20px; /* タイトルの下の余白を追加 */
+    text-align: center; /* テキストを中央揃えにする */
+}
+
+.introduce p {
+    margin-bottom: 15px; /* 段落の下の余白を追加 */
+    font-size: 18px; /* 段落のフォントサイズを変更 */
+    line-height: 1.6; /* 段落の行間を調整 */
+    text-align: center; /* テキストを中央揃えにする */
+    font-family: "Times New Roman", Times, serif; /* フォントをTimes New Romanに変更 */
+}
+
+/* スマートフォン向けの768px以下の画面のメディアクエリ */
+@media screen and (max-width: 768px) {
+  .introduce {
+      font-size: 14px; /* 小さい画面向けにフォントサイズを減らす */
+  }
+
+  .introduce h1 {
+      font-size: 16px; /* 見出しのフォントサイズを小さくする */
+  }
+
+  .introduce p {
+      font-size: 14px; /* 段落のフォントサイズを小さくする */
+  }
+}
+
+/*pho1*/
+/* 親要素 */
+.image-container {
+  display: flex; /* フレックスコンテナーにする */
+  flex-wrap: nowrap; /* 折り返しを禁止する */
+  justify-content: flex-start; /* 子要素を左寄せに配置する（デフォルト） */
+}
+
+/* 子要素 */
+.image-container img {
+  max-width: 100%; /* 画像の最大幅を親要素の幅に合わせる */
+  height: auto; /* 画像の高さを自動で調整する */
+}
+
+.pho1 {
+  width: 100px; /* 画像の幅を指定 */
+  height: auto; /* 画像の高さを自動調整 */
+  border-radius: 30px; /* 角を丸くするための値を指定 */
+  margin: 0 10px; /* 画像間の余白を指定 */
+}
+
+/*こだわりポイント*/
+.Commitment{
+    font-family: "Times New Roman", Times, serif; /* タイトルのフォントをTimes New Romanに変更 */
+    font-size: 40px; /* タイトルのフォントサイズを変更 */
+    margin-bottom: 20px; /* タイトルの下の余白を追加 */
+    text-align: center; /* テキストを中央揃えにする */
+}
+
+.Commitment h1{
+  font-family: "Times New Roman", Times, serif; /* タイトルのフォントをTimes New Romanに変更 */
+  font-size: 40px; /* タイトルのフォントサイズを変更 */
+  margin-bottom: 20px; /* タイトルの下の余白を追加 */
+  text-align: center; /* テキストを中央揃えにする */
+}
+
+.Commitment-pho {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* 画像とテキストを垂直方向に中央配置 */
+}
+
+.Commitment-item {
+    text-align: center; /* テキストを中央配置 */
+    border: 2px solid #ccc; /* 枠線を追加 */
+    padding: 20px; /* コンテンツと枠の間隔を設定 */
+    margin-bottom: 20px; /* 各グループの下の余白を追加 */
+}
+
+
+
+.Commitment-photo {
+    width: 250px; /* 画像の幅を調整 */
+    height: 250px; /* 画像の高さを調整 */
+    border-radius: 0; /* 画像を丸くする */
+}
+
+.Commitment-text1, .Commitment-text2, .Commitment-text3 {
+    margin-top: 10px; /* テキストと画像の間隔を設定 */
+    text-align: center; /* テキストの場所 */
+    font-size: 30px; /* テキストの大きさを調節 */
+}
+
+.Commitment4 {
+  margin-top: 5px; /* テキストと画像の間隔を設定 */
+  text-align: center; /* テキストの場所 */
+  font-size: 20px; /* テキストの大きさを調節 */
+}
+
+/* スマートフォン向けのメディアクエリ */
+@media screen and (max-width: 768px) {
+  .Commitment {
+      font-size: 14px; /* 小さい画面向けにフォントサイズを調整 */
+  }
+
+  .Commitment h1 {
+      font-size: 16px; /* 小さい画面向けに見出しのフォントサイズを調整 */
+  }
+
+  .Commitment-text1, .Commitment-text2, .Commitment-text3 {
+      font-size: 16px; /* 小さい画面向けにテキストのフォントサイズを調整 */
+  }
+
+  .Commitment4 {
+      font-size: 14px; /* 小さい画面向けにテキストのフォントサイズを調整 */
+  }
+
+  .Commitment-pho {
+    flex-direction: column; /* スマホ画面では横方向に配置 */
+    justify-content: center; /* 画像とテキストを中央揃え */
+}
+
+.Commitment-photo {
+    margin-right: 0; /* スマホ画面では画像とテキストの間隔をゼロに */
+    margin-bottom: 20px; /* スマホ画面では画像とテキストの間隔を追加 */
+}
+
+.Commitment-text1, .Commitment-text2, .Commitment-text3, .Commitment4 {
+    font-size: 20px; /* スマホ画面向けにテキストのフォントサイズを調整 */
+    text-align: center; /* スマホ画面ではテキストを左揃えに */
+}
+}
+
+
+/*商品紹介*/
+.shop{
+    font-family: "Times New Roman", Times, serif; /* タイトルのフォントをTimes New Romanに変更 */
+    font-size: 28px; /* タイトルのフォントサイズを変更 */
+    margin-bottom: 20px; /* タイトルの下の余白を追加 */
+    text-align: center; /* テキストを中央揃えにする */
+}
+
+.shop h1{
+  font-family: "Times New Roman", Times, serif; /* タイトルのフォントをTimes New Romanに変更 */
+  font-size: 40px; /* タイトルのフォントサイズを変更 */
+  margin-bottom: 20px; /* タイトルの下の余白を追加 */
+  text-align: center; /* テキストを中央揃えにする */
+}
+
+@media screen and (max-width: 768px) {
+  .shop {
+      font-size: 14px; /* フォントサイズを小さくする */
+  }
+
+  .shop h1 {
+      font-size: 16px; /* フォントサイズを小さくする */
+  }
+}
+
+.shop1 {
+    display: flex;
+    flex-wrap: wrap; /* コンテンツが行を超えた場合に折り返す */
+    gap: 20px; /* 要素間の間隔 */
+  }
+
+
+.shop-item {
+    flex: 1 1 250px; /* アイテムの伸縮と初期サイズを設定 */
+    display: flex;
+    flex-direction: column; /* 子要素を縦に配置 */
+    align-items: center; /* 子要素を中央に配置 */
+    text-align: center; /* テキストを中央に配置 */
+  }
+
+
+.shop-pho {
+    /*float: left; /* 画像を左に配置する */
+    width: 250px; /* 画像の幅を変更 */
+    height: auto; /* 高さを自動調整 */
+    margin-bottom: 10px; /* 画像とテキストの間に余白を追加 */
+  }
+
+.shop-text {
+    /*margin-left: auto; /* テキストを右側に配置 */
+   /* flex-grow: 1; /* 残りのスペースを利用してテキストを右側に配置 */
+    text-align: center; /* テキストの場所 */
+    font-size: 30px; /* テキストの大きさを調節 */
+   /* margin-left: 10px; /* テキストを左側に少し調節 */
+  }
+
+.shop-text1 {
+    /*margin-left: auto; /* テキストを右側に配置 */
+    /*flex-grow: 1; /* 残りのスペースを利用してテキストを右側に配置 */
+    text-align: center; /* テキストの場所 */
+    font-size: 15px; /* テキストの大きさを調節 */
+    /*margin-left: 10px; /* テキストを左側に少し調節 */
+  }
+
+
+
+/* Assuming a breakpoint for mobile devices */
+@media only screen and (max-width: 767px) {
+  .shop-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shop-item img.shop-pho {
+    order: -1; /* Place the image first */
+  }
+
+  .shop-item .shop-text, .shop-item .shop-text1 {
+    text-align: left;
+  }
+
+  .shop-item .shop-text1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shop-item .shop-text1 p {
+    margin-left: auto; /* Push pricing details to the right */
+  }
+}
+
+/*pho2*/
+/* 親要素 */
+.image-container2 {
+  display: flex; /* フレックスコンテナーにする */
+  flex-wrap: nowrap; /* 折り返しを禁止する */
+  justify-content: flex-start; /* 子要素を左寄せに配置する（デフォルト） */
+}
+
+/* 子要素 */
+.image-container2 img {
+  max-width: 100%; /* 画像の最大幅を親要素の幅に合わせる */
+  height: auto; /* 画像の高さを自動で調整する */
+}
+
+.pho2 {
+  width: 100px; /* 画像の幅を指定 */
+  height: auto; /* 画像の高さを自動調整 */
+  border-radius: 30px; /* 角を丸くするための値を指定 */
+  margin: 0 10px; /* 画像間の余白を指定 */
+}
+
+.url{
+    font-family: "Times New Roman", Times, serif; /* タイトルのフォントをTimes New Romanに変更 */
+    font-size: 28px; /* タイトルのフォントサイズを変更 */
+    margin: 100px;
+    margin-bottom: 20px; /* タイトルの下の余白を追加 */
+    text-align: center; /* テキストを中央揃えにする */
+}
+
+/* スマホ画面向けのメディアクエリ */
+@media screen and (max-width: 768px) {
+  .url {
+      display: flex; /* URLを縦に並べるためにFlexボックスを使用 */
+      flex-direction: column; /* 縦方向に配置 */
+      align-items: center; /* 中央に配置 */
+      text-align: center; /* テキストを中央揃え */
+      margin: 20px auto; /* 上下のマージンを設定 */
+  }
+}
+
+/*pho3*/
+/* 親要素 */
+.image-container3 {
+  display: flex; /* フレックスコンテナーにする */
+  flex-wrap: nowrap; /* 折り返しを禁止する */
+  justify-content: flex-start; /* 子要素を左寄せに配置する（デフォルト） */
+}
+
+/* 子要素 */
+.image-container3 img {
+  max-width: 100%; /* 画像の最大幅を親要素の幅に合わせる */
+  height: auto; /* 画像の高さを自動で調整する */
+}
+
+.pho3 {
+  width: 100px; /* 画像の幅を指定 */
+  height: auto; /* 画像の高さを自動調整 */
+  border-radius: 30px; /* 角を丸くするための値を指定 */
+  margin: 0 10px; /* 画像間の余白を指定 */
+}
+
+/* よくある質問*/
+
+h1{
+  font-family: "Times New Roman", Times, serif; /* タイトルのフォントをTimes New Romanに変更 */
+  font-size: 40px; /* タイトルのフォントサイズを変更 */
+  margin-bottom: 20px; /* タイトルの下の余白を追加 */
+  text-align: center; /* テキストを中央揃えにする */
+}
+
+.question1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.question-box {
+    width: calc(33.33% - 20px); /* 3つのボックスを横に並べる */
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* パディングと境界線がボックスの幅に含まれるように */
+}
+
+
+h3 {
+    font-size: 24px; /* h3タグの文字の大きさを24ピクセルに設定 */
+}
+
+p {
+    font-size: 18px; /* pタグの文字の大きさを18ピクセルに設定 */
+}
+
+/* スマホ画面向けのメディアクエリ */
+@media screen and (max-width: 768px) {
+  h1 {
+      font-size: 16px; /* タイトルのフォントサイズを小さくする */
+  }
+
+  .question-box {
+    width: calc(100% - 20px); /* 幅を100%に設定して1列に */
+    height: calc(16.67% - 20px); /* 高さを16.67%に設定して縦6列に */
+    margin-bottom: 20px;
+}
+
+  h3 {
+    font-size: 15px; /* スマホ画面ではh3タグの文字の大きさを20ピクセルに設定 */
+}
+
+p {
+    font-size: 14px; /* スマホ画面ではpタグの文字の大きさを16ピクセルに設定 */
+}
+}
+
+/*pho4*/
+/* 親要素 */
+.image-container4 {
+  display: flex; /* フレックスコンテナーにする */
+  flex-wrap: nowrap; /* 折り返しを禁止する */
+  justify-content: flex-start; /* 子要素を左寄せに配置する（デフォルト） */
+}
+
+/* 子要素 */
+.image-container4 img {
+  max-width: 100%; /* 画像の最大幅を親要素の幅に合わせる */
+  height: auto; /* 画像の高さを自動で調整する */
+}
+
+.pho4 {
+  width: 100px; /* 画像の幅を指定 */
+  height: auto; /* 画像の高さを自動調整 */
+  border-radius: 30px; /* 角を丸くするための値を指定 */
+  margin: 0 10px; /* 画像間の余白を指定 */
+}
+
+/*フッダー*/
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex; /* ロゴとテキストを横並びにする */
+  flex-direction: column; /* ロゴとテキストを縦並びにする */
+  align-items: center; /* テキストをロゴの中央に揃える */
+  margin-right: auto; /* 右側の余白を自動調整 */
+  margin-left: auto; /* 左側の余白を自動調整 */
+}
+
+.footer-logo {
+  width: 90px; /* ロゴのサイズを設定 */
+  height: auto; /* ロゴのアスペクト比を維持 */
+  border-radius: 50%; /* 角を50%で丸くする */
+  overflow: hidden; /* 画像が丸い枠内に収まるようにする */
+  margin-bottom: 20px; /* ロゴとテキストの間隔を設定 */
+}
+
+.footer-a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto; /* 右側の余白を自動調整 */
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.footer-a a {
+  margin-bottom: 10px;
+  text-decoration: none; /* 下線を削除 */
+  color: black; /* テキストの色を変更 */
+}
+
+.footer-text {
+  text-align: center;
+  margin-right: auto; /* 右側の余白を自動調整 */
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.sns-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 右揃えにする */
+  margin-left: auto; /* 右側の余白を自動調整 */
+  margin-right: auto;
+  font-size: 20px;
+}
+
+.sns-links a {
+  margin-bottom: 10px;
+  text-decoration: none; /* 下線を削除 */
+  color: black; /* テキストの色を変更 */
+}
+
+.footer-a a:hover {
+  text-decoration: underline; /* マウスオーバー時に下線を表示 */
+}
+
+.sns-links a:hover {
+  text-decoration: underline; /* マウスオーバー時に下線を表示 */
+}
+
+/* スマホ画面向けのメディアクエリ */
+@media screen and (max-width: 768px) {
+
+  footer {
+    footer {
+      flex-direction: column; /* スマホ画面では縦方向に並べる */
+      justify-content: center; /* 要素を中央揃え */
+      align-items: center; /* 要素を中央揃え */
+      text-align: center; /* テキストを中央揃え */
+    }
+  
+    .footer-container {
+      margin-top: 10px; /* footer-aの下にスペースを作る */
+    }
+
+}
+
+  .footer-container {
+    margin-bottom: 10px; /* フッター全体の下の余白を追加 */
+  
+  }
+
+  .footer-logo {
+    width: 50px; /* ロゴのサイズを設定 */
+    height: auto; /* ロゴのアスペクト比を維持 */
+    border-radius: 50%; /* 角を50%で丸くする */
+    overflow: hidden; /* 画像が丸い枠内に収まるようにする */
+    margin-bottom: 5px; /* ロゴとテキストの間隔を小さくする */
+  }
+
+  .footer-a,
+  .sns-links,
+  .footer-text {
+    margin: 0 auto 5px; /* 各要素の余白を自動調整し、下に余白を追加 */
+    font-size: 14px; /* フォントサイズをさらに小さくする */
+  }
+
+  .footer-a a,
+  .sns-links a {
+    margin-bottom: 3px; /* リンク間の間隔をさらに小さくする */
+  }
+}
